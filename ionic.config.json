@@ -1,0 +1,7 @@
+{
+  "name": "carnet_muscu",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
