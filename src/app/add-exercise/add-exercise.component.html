@@ -1,0 +1,30 @@
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Add Exercise</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="closeModal()">Cancel</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <form (ngSubmit)="submitExercise()">
+      <ion-item>
+        <ion-label position="floating">Exercise Name</ion-label>
+        <ion-input [(ngModel)]="newExercise.name" name="name" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Muscles</ion-label>
+        <ion-input [(ngModel)]="newExercise.muscles" name="muscles"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Description</ion-label>
+        <ion-textarea [(ngModel)]="newExercise.description" name="description"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Image URL</ion-label>
+        <ion-input [(ngModel)]="newExercise.image" name="image"></ion-input>
+      </ion-item>
+      <ion-button expand="full" type="submit">Add Exercise</ion-button>
+    </form>
+  </ion-content>

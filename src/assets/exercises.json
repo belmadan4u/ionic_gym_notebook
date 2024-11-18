@@ -1,0 +1,73 @@
+[
+    {
+      "id": 1,
+      "name": "Push-Up",
+      "muscles": ["Chest", "Triceps", "Shoulders"],
+      "description": "A bodyweight exercise that targets the chest, triceps, and shoulders by pushing the body away from the floor.",
+      "image": "assets/images_exercises/Push-Up-Plus.gif"
+    },
+    {
+      "id": 2,
+      "name": "Deadlift",
+      "muscles": ["Back", "Glutes", "Hamstrings"],
+      "description": "A strength exercise that works the entire posterior chain by lifting a weight off the ground.",
+      "image": "assets/images_exercises/deadlift-vue-avant.gif"
+    },
+    {
+      "id": 3,
+      "name": "Squat",
+      "muscles": ["Quads", "Glutes", "Hamstrings"],
+      "description": "A compound exercise that targets the lower body and core by lowering the hips and standing back up.",
+      "image": "assets/images_exercises/homme-faisant-un-squat-avec-barre.gif"
+    },
+    {
+      "id": 4,
+      "name": "Pull-Up",
+      "muscles": ["Back", "Biceps", "Shoulders"],
+      "description": "A bodyweight exercise that strengthens the back and biceps by pulling the body up to a bar.",
+      "image": "assets/images_exercises/Pull-up.gif"
+    },
+    {
+      "id": 5,
+      "name": "Bicep Curl",
+      "muscles": ["Biceps"],
+      "description": "An isolation exercise that targets the biceps by curling a weight towards the shoulder.",
+      "image": "assets/images_exercises/curl-biceps-avec-halteres-alterne.gif"
+    },
+    {
+      "id": 6,
+      "name": "Plank",
+      "muscles": ["Core"],
+      "description": "A bodyweight exercise that strengthens the core by maintaining a straight posture while balancing on the forearms and toes.",
+      "image": "assets/images_exercises/plank.gif"
+    },
+    {
+      "id": 7,
+      "name": "Lunge",
+      "muscles": ["Quads", "Glutes", "Hamstrings"],
+      "description": "A lower-body exercise that targets the legs and glutes by stepping forward and lowering the body.",
+      "image": "assets/images_exercises/bodyweight-forward-lunge.gif"
+    },
+    {
+      "id": 8,
+      "name": "Shoulder Press",
+      "muscles": ["Shoulders", "Triceps"],
+      "description": "A strength exercise that targets the shoulders by pressing a weight overhead.",
+      "image": "assets/images_exercises/Dumbbell-Shoulder-Press.gif"
+    },
+    {
+      "id": 9,
+      "name": "Russian Twist",
+      "muscles": ["Core", "Obliques"],
+      "description": "An abdominal exercise that targets the obliques by twisting the torso from side to side.",
+      "image": "assets/images_exercises/Russian-Twist.gif"
+    },
+    {
+      "id": 10,
+      "name": "Bench Press",
+      "muscles": ["Chest", "Triceps", "Shoulders"],
+      "description": "A compound exercise that strengthens the chest, triceps, and shoulders by pressing a weight from a lying position.",
+      "image": "assets/images_exercises/bench-press.gif"
+    }
+  ]
+  

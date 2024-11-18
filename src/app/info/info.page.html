@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Info
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="user">
+    <ion-card-header>
+      <ion-card-title>Informations utilisateur</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Nom :</strong> {{ user.name }}</p>
+      <p><strong>Genre :</strong> {{ user.male ? 'Homme' : 'Femme' }}</p>
+      <p><strong>Poids :</strong> {{ user.weight }} kg</p>
+      <p><strong>Taille :</strong> {{ user.height }} cm</p>
+      <p><strong>Âge :</strong> {{ user.age }} ans</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="user">
+    <ion-card-header>
+      <ion-card-title>Statistiques</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>IMC :</strong> {{ imc }} ({{imcCategory}})</p>
+      <p><strong>Métabolisme de base :</strong> {{ bmr }} kcal/jour</p>
+      <p><strong>Masse graisseuse estimée :</strong> {{ bodyFat }} %</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
