@@ -1,17 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Programs
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/add-program">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <div *ngFor="let program of programs" class="program">
+    <h2>{{ program.name }}</h2>
+    <ul>
+      <li *ngFor="let exercise of program.exercises" class="exercise-item">
+        <div class="exercise-info">
+          <strong>{{ exercise.exercise.name }}</strong> - 
+          {{ exercise.sets }} sets x {{ exercise.reps }} reps at {{ exercise.charge }} kg
+          <br />
+          Muscles travaillés : {{ exercise.exercise.muscles.join(', ') }}
+        </div>
+        <img [src]="exercise.exercise.image" alt="{{ exercise.exercise.name }}" class="exercise-image" />
+      </li>
+    </ul>
+  </div>
 </ion-content>

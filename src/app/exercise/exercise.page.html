@@ -18,15 +18,19 @@
         <ion-card>
           <ion-card-header>
             <ion-card-title>{{ exercise.name }}</ion-card-title>
+            <ion-button fill="clear">
+              <ion-icon  name="trash"></ion-icon>
+            </ion-button>
           </ion-card-header>
 
           <ion-card-content>
-            <ion-img [src]="exercise.image" alt="{{ exercise.name }}"></ion-img>
-            <p>{{ exercise.description }}</p>
-            <p><strong>Muscles:</strong> {{ exercise.muscles.join(', ') }}</p>
-            <ion-button expand="full" color="danger" >
-              Delete
-            </ion-button>
+            <div class="image-container">
+              <ion-img [src]="exercise.image" alt="{{ exercise.name }}"></ion-img>
+            </div>
+            <div class="text-container">
+              <p>{{ exercise.description }}</p>
+              <p class="muscles-p"><strong>Muscles:</strong> {{ exercise.muscles.join(', ') }}</p>
+            </div>
           </ion-card-content>
         </ion-card>
       </ion-col>

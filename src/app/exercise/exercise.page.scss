@@ -1,0 +1,46 @@
+ion-card {
+  position: relative;
+  border-radius: 15px;
+
+  ion-button {
+    --background: transparent;
+    color: rgba(255, 0, 0, 0.615);
+    font-size: 0.8rem;
+    position: absolute;
+    top: 0.1rem;
+    right: 0rem;
+    z-index: 10;
+
+    ion-icon {
+      font-size: 1.5rem;
+    }
+  }
+
+  ion-card-content {
+    display: flex;
+    font-size: large;
+    text-align: justify;
+
+    .muscles-p {
+      text-align: start;
+    }
+  }
+
+  .image-container {
+    width: 100%;
+    border-radius: 7px;
+    overflow: hidden;
+  }
+
+  ion-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 3%;
+  }
+}

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button routerLink="/tabs/programs"></ion-back-button>
+    <ion-title>Ajouter un Programme</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="programForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Nom du Programme</ion-label>
+      <ion-input formControlName="name"></ion-input>
+    </ion-item>
+
+    <div formArrayName="exercises">
+      <div class="exercise" *ngFor="let exercise of exercises.controls; let i = index" [formGroupName]="i">
+        <ion-item class="exercise-header">
+          <ion-label position="floating">Nom de l'Exercice</ion-label>
+          <ion-select formControlName="exerciseId">
+            <ion-select-option *ngFor="let ex of availableExercises" [value]="ex.id">{{ ex.name }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <div class="exercise-details">
+          <ion-item>
+            <ion-label position="floating">Sets</ion-label>
+            <ion-input type="number" formControlName="sets"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Reps</ion-label>
+            <ion-input type="number" formControlName="reps"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Charge</ion-label>
+            <ion-input type="number" formControlName="charge"></ion-input>
+          </ion-item>
+        </div>
+        <ion-button color="danger" (click)="removeExercise(i)">Supprimer</ion-button>
+      </div>
+    </div>
+
+    <ion-button (click)="addExercise()">Ajouter un Exercice</ion-button>
+    <ion-button class='submit'type="submit" [disabled]="!programForm.valid">Enregistrer</ion-button>
+  </form>
+</ion-content>

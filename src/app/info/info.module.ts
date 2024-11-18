@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { InfoPage } from './info.page';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { InfoPageRoutingModule } from './info-routing.module';
 
@@ -12,7 +11,6 @@ import { InfoPageRoutingModule } from './info-routing.module';
     IonicModule,
     CommonModule,
     FormsModule,
-    ExploreContainerComponentModule,
     InfoPageRoutingModule
   ],
   declarations: [InfoPage]
