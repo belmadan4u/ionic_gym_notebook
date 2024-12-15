@@ -8,11 +8,15 @@ const routes: Routes = [
   },
   {
     path: 'add-program',
-    loadChildren: () => import('./add-program/add-program.module').then( m => m.AddProgramPageModule)
+    loadChildren: () => import('./programs/add-program/add-program.module').then( m => m.AddProgramPageModule)
   },
   {
     path: 'update-user-settings',
-    loadChildren: () => import('./update-user-settings/update-user-settings.module').then( m => m.UpdateUserSettingsPageModule)
+    loadChildren: () => import('./info/update-user-settings/update-user-settings.module').then( m => m.UpdateUserSettingsPageModule)
+  }, 
+  {
+    path: 'update-program/:id',
+    loadChildren: () => import('./programs/update-program/update-program.module').then( m => m.UpdateProgramPageModule)
   }
 ];
 @NgModule({

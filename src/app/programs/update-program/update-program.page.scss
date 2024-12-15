@@ -1,0 +1,17 @@
+
+.sets-reps-charge {
+    padding-top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .container-input{
+        display: flex;
+        flex-direction: column;
+        width: 19%;
+        ion-input{
+            width: 50%;
+        }
+    }
+    
+}

@@ -11,12 +11,13 @@ export class ProgramsPage {
   constructor(private programService : ProgramService) {}
   
   ngOnInit() {
-    this.programService.getPrograms().subscribe(
-      (programs) => {
-        this.programs = programs;
-        console.log(this.programs); // Vérifiez que les exercices sont chargés correctement
-      },
-      (error) => console.error('Erreur lors de la récupération des programmes :', error)
-    );
+    this.programService.getPrograms().subscribe(programs => this.programs = programs);
+  }
+
+  deleteProgram(id: string){
+    if (confirm('Êtes-vous sûr de vouloir supprimer cet élément ?')) {
+       this.programService.deleteProgram(id)
+    }
+   
   }
 }

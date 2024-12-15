@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Exercise } from '../models/exercise';
 
 @Injectable({
@@ -10,8 +11,17 @@ export class ExerciseService {
   constructor(private firestore: AngularFirestore) {}
 
   getExercises(): Observable<Exercise[]> {
-    return this.firestore.collection<Exercise>('exercises').valueChanges();
+    return this.firestore.collection<Exercise>('exercises').snapshotChanges().pipe(
+      map((actions: any[]) =>
+        actions.map(a => {
+          const data = a.payload.doc.data() as Exercise;
+          const id = a.payload.doc.id;
+          return { ...data, id };
+        })
+      )
+    );
   }
+  
 
   getExercise(id: number){
     return this.firestore.doc<Exercise>('exercises/' + id).valueChanges();

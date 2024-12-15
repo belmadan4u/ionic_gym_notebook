@@ -1,10 +1,12 @@
 
-import { ExerciseSetsRepsCharge } from "c:/Users/belma/Documents/ionins_project/carnet_muscu/src/app/models/exerciseSetsRepsCharge"
+import { ExerciseSetsRepsCharge } from "./exerciseSetsRepsCharge"
 export class Program {
+  id : string;
   name: string;
   exercises: ExerciseSetsRepsCharge[];
 
-  constructor(name: string, exercises: ExerciseSetsRepsCharge[]) {
+  constructor(id: string, name: string, exercises: ExerciseSetsRepsCharge[]) {
+    this.id = id;
     this.name = name;
     this.exercises = exercises;
   }
