@@ -13,7 +13,18 @@
 
 <ion-content [fullscreen]="true">
   <div *ngFor="let program of programs" class="program">
-    <h2>{{ program.name }}</h2>
+    <div class="btn_title">
+      <h2>{{ program.name }}</h2>
+      <div>
+        <ion-button class="modify" [routerLink]="['/update-program', program.id]">
+          <ion-icon name="create-outline"></ion-icon>
+        </ion-button>
+        <ion-button class="delete" (click)="deleteProgram(program.id)">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+    
     <ul>
       <li *ngFor="let exercise of program.exercises" class="exercise-item">
         <div class="exercise-info">

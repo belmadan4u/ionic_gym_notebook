@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/tabs/programs"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Update Program</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="program">
+  <form [formGroup]="programForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="stacked">Nom</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+
+    <ion-list formArrayName="exercises">
+      <ion-item *ngFor="let exerciseCtrl of exercises.controls; let i = index" [formGroupName]="i">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ exerciseCtrl.get('nameExercise')?.value || 'Nom de l\'exercice' }}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content class="sets-reps-charge">
+            <div class="container-input">
+              <ion-label position="stacked">Sets</ion-label>
+              <ion-input type="number" formControlName="sets"></ion-input>
+            </div>
+              
+            <div class="container-input"> 
+              <ion-label position="stacked">Reps</ion-label>
+              <ion-input type="number" formControlName="reps"></ion-input>
+            </div>
+             
+            <div class="container-input">
+              <ion-label position="stacked">Charge</ion-label>
+              <ion-input type="number" formControlName="charge"></ion-input>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="full" type="submit" [disabled]="programForm.invalid">
+      Enregistrer les modifications
+    </ion-button>
+  </form>
+</ion-content>
+
+<ion-content *ngIf="!program">
+  Error
+</ion-content>

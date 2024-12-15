@@ -7,6 +7,27 @@ ion-content {
       border: 1px solid blue;
       border-radius: 1%;
 
+      .btn_title {
+        display: flex;
+        justify-content: space-between;
+      
+        ion-button {
+          --background: transparent; /* Enlève le fond bleu par défaut */
+          --color: #fff; /* Couleur du texte */
+      
+          &.modify {
+            --background: #3880ff; /* Couleur de fond pour le bouton modifier */
+            --color: #fff; /* Couleur du texte */
+          }
+      
+          &.delete {
+            --background: #ff4538; /* Couleur de fond pour le bouton supprimer */
+            --color: #fff; /* Couleur du texte */
+          }
+        }
+      }
+      
+
       h2 {
         font-size: 1.2rem;
         font-weight: bolder;
@@ -48,7 +69,4 @@ ion-content {
     }
   }
   
-  ion-button {
-    --background: #3880ff;
-    --color: #fff;
-  }
+  
